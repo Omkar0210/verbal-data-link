@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Heart, Search, Star, FileText, Users, MessageSquare, LogOut } from "lucide-react";
+import { VoiceAssistant } from "@/components/VoiceAssistant";
 
 interface PatientData {
   name: string;
@@ -95,6 +96,7 @@ const PatientDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-primary/5 to-secondary/5">
+      <VoiceAssistant />
       {/* Header */}
       <div className="bg-card border-b shadow-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4">
