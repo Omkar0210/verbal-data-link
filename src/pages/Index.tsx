@@ -14,20 +14,20 @@ const Index = () => {
         <div className="text-center max-w-4xl mx-auto space-y-8">
           {/* Logo/Brand */}
           <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="bg-gradient-hero p-3 rounded-2xl shadow-glow">
-              <Activity className="w-8 h-8 text-white" />
+            <div className="bg-gradient-hero p-3 rounded-2xl shadow-glow animate-pulse-glow">
+              <Activity className="w-8 h-8 text-white animate-float" />
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent animate-in fade-in slide-in-from-bottom-4 duration-700">
               CuraLink
             </h1>
           </div>
 
           {/* Tagline */}
-          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-5 duration-1000">
             Connecting patients and researchers to discover{" "}
-            <span className="text-primary font-semibold">clinical trials</span>,{" "}
-            <span className="text-secondary font-semibold">medical publications</span>, and{" "}
-            <span className="text-accent font-semibold">health experts</span>
+            <span className="text-primary font-semibold hover:scale-105 inline-block transition-transform">clinical trials</span>,{" "}
+            <span className="text-secondary font-semibold hover:scale-105 inline-block transition-transform">medical publications</span>, and{" "}
+            <span className="text-accent font-semibold hover:scale-105 inline-block transition-transform">health experts</span>
           </p>
 
           {/* CTA Cards */}

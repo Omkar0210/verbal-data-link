@@ -12,8 +12,10 @@ export const VoiceAssistant = () => {
   const { toast } = useToast();
 
   useEffect(() => {
-    // Initialize Vapi client
-    vapiRef.current = new Vapi(import.meta.env.VITE_VAPI_API_KEY || 'fa189611-80e1-470c-a3d8-0a941852a956');
+    // Initialize Vapi client with API key
+    const apiKey = 'fa189611-80e1-470c-a3d8-0a941852a956';
+    console.log('Initializing Vapi with API key');
+    vapiRef.current = new Vapi(apiKey);
 
     // Set up event listeners
     vapiRef.current.on('call-start', () => {
@@ -55,16 +57,19 @@ export const VoiceAssistant = () => {
 
   const startCall = async () => {
     try {
-      await vapiRef.current.start('350e5c66-88a2-493d-9958-a2b955ad94de');
+      console.log('Starting Vapi call...');
+      const assistantId = '350e5c66-88a2-493d-9958-a2b955ad94de';
+      await vapiRef.current.start(assistantId);
+      console.log('Vapi call started successfully');
       toast({
         title: 'Voice Assistant Active',
         description: 'You can now speak with Omkar, your medical assistant',
       });
-    } catch (error) {
+    } catch (error: any) {
       console.error('Failed to start call:', error);
       toast({
         title: 'Failed to Start',
-        description: 'Could not connect to voice assistant',
+        description: error?.message || 'Could not connect to voice assistant. Please check your microphone permissions.',
         variant: 'destructive',
       });
     }
@@ -89,9 +94,9 @@ export const VoiceAssistant = () => {
     <div className="fixed bottom-6 right-6 z-50">
       <div className="flex flex-col items-end gap-3">
         {isCallActive && (
-          <div className="flex items-center gap-2 bg-card border border-border rounded-full px-4 py-2 shadow-lg">
-            <div className={`w-2 h-2 rounded-full animate-pulse ${assistantSpeaking ? 'bg-primary' : 'bg-muted'}`} />
-            <span className="text-sm text-foreground">
+          <div className="flex items-center gap-2 bg-card border border-primary rounded-full px-4 py-2 shadow-glow animate-in slide-in-from-bottom-5">
+            <div className={`w-3 h-3 rounded-full ${assistantSpeaking ? 'bg-primary animate-pulse' : 'bg-secondary animate-pulse'}`} />
+            <span className="text-sm font-medium text-foreground">
               {assistantSpeaking ? 'Omkar is speaking...' : 'Listening...'}
             </span>
           </div>
@@ -103,7 +108,7 @@ export const VoiceAssistant = () => {
               onClick={toggleMute}
               variant={isMuted ? 'destructive' : 'outline'}
               size="icon"
-              className="h-12 w-12 rounded-full shadow-lg"
+              className="h-12 w-12 rounded-full shadow-md hover:shadow-lg transition-all hover:scale-105"
             >
               {isMuted ? <MicOff className="h-5 w-5" /> : <Mic className="h-5 w-5" />}
             </Button>
@@ -113,7 +118,7 @@ export const VoiceAssistant = () => {
             onClick={isCallActive ? endCall : startCall}
             variant={isCallActive ? 'destructive' : 'default'}
             size="icon"
-            className="h-14 w-14 rounded-full shadow-lg"
+            className="h-14 w-14 rounded-full shadow-glow hover:scale-110 transition-transform bg-gradient-hero"
           >
             {isCallActive ? (
               <PhoneOff className="h-6 w-6" />
