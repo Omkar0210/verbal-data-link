@@ -1,73 +1,105 @@
-# Welcome to your Lovable project
+# CuraLink - AI-Powered Healthcare Platform
 
-## Project info
+CuraLink is an innovative healthcare companion that leverages AI to provide personalized medical guidance through voice interactions and intelligent chat.
 
-**URL**: https://lovable.dev/projects/6a59129c-c6fa-4e4e-855a-ab85e970f0f4
+## Features
 
-## How can I edit this code?
+- 🎙️ **Voice Assistant (Omkar)** - Natural voice conversations with AI healthcare assistant
+- 💬 **AI Chatbot** - Intelligent text-based healthcare guidance  
+- 📊 **Health Dashboard** - Track your wellness metrics and trends
+- 📅 **Appointments** - Manage healthcare visits
+- 🔬 **Clinical Trials** - Discover relevant research opportunities
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Frontend**: React + TypeScript + Vite
+- **Styling**: Tailwind CSS with custom design system
+- **Voice AI**: Vapi AI Assistant
+- **Backend**: Lovable Cloud (Supabase)
+- **Deployment**: Vercel
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/6a59129c-c6fa-4e4e-855a-ab85e970f0f4) and start prompting.
+## Project URL
 
-Changes made via Lovable will be committed automatically to this repo.
+**Lovable Project**: https://lovable.dev/projects/6a59129c-c6fa-4e4e-855a-ab85e970f0f4
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+## Local Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
+# Navigate to project directory
 cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## Deployment to Vercel
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Quick Deploy
 
-**Use GitHub Codespaces**
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Click "Add New Project"
+4. Import your GitHub repository
+5. Configure build settings:
+   - **Framework**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+6. Add environment variables (see below)
+7. Click "Deploy"
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Environment Variables for Vercel
 
-## What technologies are used for this project?
+Add these in your Vercel project settings:
 
-This project is built with:
+```
+VITE_SUPABASE_URL=https://nhiialsxhjewpvlqvcpw.supabase.co
+VITE_SUPABASE_PUBLISHABLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5oaWlhbHN4aGpld3B2bHF2Y3B3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjIzMTA5NDMsImV4cCI6MjA3Nzg4Njk0M30.SOF-Zmu4eyd1tp0gHnvraXP0YqzNLDarIeSiPkccnDk
+VITE_SUPABASE_PROJECT_ID=nhiialsxhjewpvlqvcpw
+```
+
+### Vercel Configuration
+
+The `vercel.json` file is already configured for proper routing. Your app will automatically handle client-side routing.
+
+## Voice Assistant
+
+The Vapi voice assistant "Omkar" is pre-configured with:
+- Healthcare expertise
+- Natural conversation capabilities
+- 24/7 availability
+
+Simply click the microphone button on the dashboard to start talking!
+
+## Technologies Used
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+- Vapi AI
+- Lovable Cloud (Supabase)
 
-## How can I deploy this project?
+## Custom Domain
 
-Simply open [Lovable](https://lovable.dev/projects/6a59129c-c6fa-4e4e-855a-ab85e970f0f4) and click on Share -> Publish.
+You can connect a custom domain via Lovable:
+1. Navigate to Project > Settings > Domains
+2. Click "Connect Domain"
 
-## Can I connect a custom domain to my Lovable project?
+Read more: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
 
-Yes, you can!
+## License
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+MIT
